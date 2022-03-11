@@ -14,7 +14,6 @@ const Table = ({ tasks }) => {
     []
   );
 
-  // const data = useMemo(() => fakeData(), []);
   const data = useMemo(() => tasks, [tasks]);
 
   const tableInstance = useTable({ columns, data });
