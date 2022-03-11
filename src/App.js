@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
@@ -9,7 +9,6 @@ import Table from "./components/Table";
 function App() {
   // State
   const [tasks, setTasks] = useState([]);
-  const dataRef = useRef();
 
   // Functions
   const handleReceiveData = (task) => {

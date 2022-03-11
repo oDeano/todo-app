@@ -27,7 +27,7 @@ const NewTask = (props) => {
     task.title = title;
     task.description = description;
 
-    return task.returnObj();
+    return task;
   };
 
   const resetForm = () => {
