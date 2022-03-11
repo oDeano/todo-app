@@ -27,7 +27,7 @@ function App() {
           <div>
             <Display onSubmit={handleReceiveData} />
           </div>
-          <div>
+          <div className="p-3">
             <Table tasks={tasks} />
           </div>
         </div>
