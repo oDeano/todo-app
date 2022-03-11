@@ -7,9 +7,9 @@ const Display = (props) => {
   };
 
   return (
-    <div>
+    <>
       <NewTask onSubmit={handlePassTask} />
-    </div>
+    </>
   );
 };
 

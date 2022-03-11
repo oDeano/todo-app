@@ -30,7 +30,9 @@ function App() {
           <Nav />
         </div>
         <div className="display">
-          <Display onSubmit={handleReceiveData} />
+          <div>
+            <Display onSubmit={handleReceiveData} />
+          </div>
           <TaskList tasks={tasks} />
         </div>
       </div>
