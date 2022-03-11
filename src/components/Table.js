@@ -10,15 +10,12 @@ const Table = ({ tasks }) => {
         Header: "Task",
         accessor: "title",
       },
-      {
-        Header: "Task ID",
-        accessor: "taskId",
-      },
     ],
     []
   );
 
-  const data = useMemo(() => fakeData(), []);
+  // const data = useMemo(() => fakeData(), []);
+  const data = useMemo(() => tasks, [tasks]);
 
   const tableInstance = useTable({ columns, data });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
