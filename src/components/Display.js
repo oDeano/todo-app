@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import NewTask from "./NewTask-bs";
+import React from "react";
+import NewTask from "./NewTask";
 
 const Display = (props) => {
-  const passData = (data) => {
-    props.onSubmit(data);
+  const handlePassTask = (task) => {
+    props.onSubmit(task);
   };
 
   return (
     <div>
-      <NewTask onSubmit={passData} />
+      <NewTask onSubmit={handlePassTask} />
     </div>
   );
 };

@@ -1,20 +1,10 @@
 import React from "react";
 import Task from "./Task";
 
-const TaskList = ({ taskList }) => {
-  return (
-    <div>
-      {taskList.map((task) => {
-        return (
-          <Task
-            title={task.title}
-            description={task.description}
-            key={task.key}
-          />
-        );
-      })}
-    </div>
-  );
+const TaskList = ({ tasks }) => {
+  return tasks.map((task) => {
+    return <Task task={task} key={task.key} />;
+  });
 };
 
 export default TaskList;

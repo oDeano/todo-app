@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
@@ -7,22 +7,31 @@ import Display from "./components/Display";
 import TaskList from "./components/TaskList";
 
 function App() {
-  const [taskList, setTaskList] = useState([]);
-  const addTask = (newTask) => {
-    setTaskList([...taskList, newTask]);
-    console.log(taskList);
+  // State
+  let test = {
+    id: 1,
+    title: "task1",
+    description: "description",
+  };
+  const [tasks, setTasks] = useState([test]);
+  const dataRef = useRef();
+
+  // Functions
+  const handleReceiveData = (task) => {
+    setTasks([...tasks, task]);
   };
 
+  // Return
   return (
     <div className="App">
       <Header />
       <div className="content">
-        <div className="nav">
+        <div className="nav shadow h-100 w-100">
           <Nav />
         </div>
         <div className="display">
-          <Display onSubmit={addTask} />
-          <TaskList taskList={taskList} />
+          <Display onSubmit={handleReceiveData} />
+          <TaskList tasks={tasks} />
         </div>
       </div>
     </div>
