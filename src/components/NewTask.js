@@ -8,6 +8,7 @@ import {
   ModalFooter,
   ModalHeader,
 } from "react-bootstrap";
+import Task from "../functions/Task";
 
 const NewTask = (props) => {
   // Form data handling
@@ -21,13 +22,12 @@ const NewTask = (props) => {
   };
 
   const createTask = () => {
-    let task = {
-      key: uuidv4(),
-      title: title,
-      description: description,
-    };
+    const task = new Task();
+    task.taskId = uuidv4();
+    task.title = title;
+    task.description = description;
 
-    return task;
+    return task.returnObj();
   };
 
   const resetForm = () => {
@@ -43,9 +43,21 @@ const NewTask = (props) => {
   };
   const handleShow = () => setModalState(true);
 
+  // Test
+  const taskTest = () => {
+    const task = new Task();
+    task.taskId = uuidv4();
+    task.title = "asdf";
+    task.description = "asdf";
+    console.log(task);
+  };
+
   return (
     <div className="shadow-sm p-3">
       <Button onClick={handleShow}>New Task</Button>
+      <Button className="m-3" onClick={taskTest}>
+        test
+      </Button>
       <Modal show={modalState} onHide={handleClose}>
         <ModalHeader closeButton>Add new task</ModalHeader>
         <Form onSubmit={handleSubmit}>

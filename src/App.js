@@ -4,16 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Display from "./components/Display";
-import TaskList from "./components/TaskList";
+import Table from "./components/Table";
 
 function App() {
   // State
-  let test = {
-    id: 1,
-    title: "task1",
-    description: "description",
-  };
-  const [tasks, setTasks] = useState([test]);
+  const [tasks, setTasks] = useState([]);
   const dataRef = useRef();
 
   // Functions
@@ -33,7 +28,9 @@ function App() {
           <div>
             <Display onSubmit={handleReceiveData} />
           </div>
-          <TaskList tasks={tasks} />
+          <div>
+            <Table tasks={tasks} />
+          </div>
         </div>
       </div>
     </div>
