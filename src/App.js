@@ -4,11 +4,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Display from "./components/Display";
-import Table from "./components/Table";
+
+const LOCAL_STORAGE_KEY = "todoApp.taskList";
 
 function App() {
   // State
   const [tasks, setTasks] = useState([]);
+
+  // Local storage
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
+  }, [tasks]);
+
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedTasks) setTasks(storedTasks);
+  }, []);
 
   // Functions
   const handleReceiveData = (task) => {
@@ -27,9 +38,7 @@ function App() {
           <div>
             <Display onSubmit={handleReceiveData} />
           </div>
-          <div className="p-3">
-            <Table tasks={tasks} />
-          </div>
+          <div className="p-3"></div>
         </div>
       </div>
     </div>

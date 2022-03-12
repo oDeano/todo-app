@@ -11,9 +11,3 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
-
-/* Table */
-
-.th-isComplete {
-  width: 5%;
-}
