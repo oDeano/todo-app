@@ -12,7 +12,8 @@
   grid-template-columns: 1fr 4fr;
 }
 
-.display {
-  /* display: grid;
-  grid-template-rows: auto; */
+/* Table */
+
+.th-isComplete {
+  width: 5%;
 }

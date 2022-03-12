@@ -1,11 +1,14 @@
 import React, { useMemo } from "react";
 import BTable from "react-bootstrap/Table";
 import { useTable } from "react-table";
-import fakeData from "../functions/fakeData";
 
 const Table = ({ tasks }) => {
   const columns = useMemo(
     () => [
+      {
+        Header: "",
+        accessor: "isComplete",
+      },
       {
         Header: "Task",
         accessor: "title",
@@ -21,12 +24,14 @@ const Table = ({ tasks }) => {
     tableInstance;
 
   return (
-    <BTable hover {...getTableProps()}>
+    <BTable className="table-task" hover {...getTableProps()}>
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              <th className={`th-${column.id}`} {...column.getHeaderProps()}>
+                {column.render("Header")}
+              </th>
             ))}
           </tr>
         ))}
