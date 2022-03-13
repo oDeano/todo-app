@@ -11,3 +11,35 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
+
+/* Task list */
+li {
+  list-style: none;
+}
+
+.task-element {
+  display: flex;
+  border-bottom: 1px grey solid;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.task-checkbox {
+  padding: 0 0.5rem;
+  justify-self: center;
+}
+
+#task-check {
+  border-radius: 1rem;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.task-title {
+  font-size: 16px;
+}
+
+.task-description {
+  font-size: 12px;
+  color: #6c757d;
+}

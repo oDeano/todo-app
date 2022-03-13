@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Display from "./components/Display";
+import TaskList from "./components/TaskList";
 
 const LOCAL_STORAGE_KEY = "todoApp.taskList";
 
@@ -38,7 +39,9 @@ function App() {
           <div>
             <Display onSubmit={handleReceiveData} />
           </div>
-          <div className="p-3"></div>
+          <div className="p-3">
+            <TaskList tasks={tasks} />
+          </div>
         </div>
       </div>
     </div>
