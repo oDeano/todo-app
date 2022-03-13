@@ -1,9 +1,9 @@
 import React from "react";
 import NewTask from "./NewTask";
 
-const Display = (props) => {
+const Display = (onSubmit) => {
   const handlePassTask = (task) => {
-    props.onSubmit(task);
+    onSubmit.onSubmit(task);
   };
 
   return (

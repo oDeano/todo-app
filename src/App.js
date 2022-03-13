@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
@@ -27,6 +27,13 @@ function App() {
     setTasks([...tasks, task]);
   };
 
+  const handleCheck = (id) => {
+    const newTasks = [...tasks];
+    const task = newTasks.find((task) => task.taskId === id);
+    task.isComplete = !task.isComplete;
+    setTasks(newTasks);
+  };
+
   // Return
   return (
     <div className="App">
@@ -40,7 +47,7 @@ function App() {
             <Display onSubmit={handleReceiveData} />
           </div>
           <div className="p-3">
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} handleCheck={handleCheck} />
           </div>
         </div>
       </div>
