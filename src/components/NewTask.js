@@ -9,6 +9,7 @@ import {
   ModalHeader,
 } from "react-bootstrap";
 import Task from "../functions/Task";
+import { useHotkeys } from "react-hotkeys-hook";
 
 const NewTask = ({ handleReceiveData }) => {
   // Form data handling
@@ -42,6 +43,10 @@ const NewTask = ({ handleReceiveData }) => {
     resetForm();
   };
   const handleShow = () => setModalState(true);
+
+  const modalHotKey = useHotkeys("ctrl+i", () => {
+    setModalState(true);
+  });
 
   return (
     <div className="shadow-sm p-3">
