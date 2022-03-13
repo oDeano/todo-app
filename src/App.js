@@ -44,7 +44,7 @@ function App() {
         </div>
         <div className="display">
           <div>
-            <Display onSubmit={handleReceiveData} />
+            <Display handleReceiveData={handleReceiveData} />
           </div>
           <div className="p-3">
             <TaskList tasks={tasks} handleCheck={handleCheck} />

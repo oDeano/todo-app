@@ -1,14 +1,14 @@
 import React from "react";
 import NewTask from "./NewTask";
 
-const Display = (onSubmit) => {
-  const handlePassTask = (task) => {
-    onSubmit.onSubmit(task);
-  };
+const Display = ({ handleReceiveData }) => {
+  // const handlePassTask = (task) => {
+  //   onSubmit.onSubmit(task);
+  // };
 
   return (
     <>
-      <NewTask onSubmit={handlePassTask} />
+      <NewTask handleReceiveData={handleReceiveData} />
     </>
   );
 };

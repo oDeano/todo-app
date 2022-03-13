@@ -10,14 +10,15 @@ import {
 } from "react-bootstrap";
 import Task from "../functions/Task";
 
-const NewTask = (onSubmit) => {
+const NewTask = ({ handleReceiveData }) => {
   // Form data handling
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit.onSubmit(createTask());
+    // onSubmit.onSubmit(createTask());
+    handleReceiveData(createTask());
     handleClose();
   };
 
