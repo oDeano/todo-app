@@ -45,7 +45,7 @@ const NewTask = ({ handleReceiveData }) => {
   const handleShow = () => setModalState(true);
 
   const modalHotKey = useHotkeys("ctrl+i", () => {
-    setModalState(true);
+    setModalState((prev) => !prev);
   });
 
   return (
