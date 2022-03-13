@@ -17,7 +17,6 @@ const NewTask = ({ handleReceiveData }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // onSubmit.onSubmit(createTask());
     handleReceiveData(createTask());
     handleClose();
   };
