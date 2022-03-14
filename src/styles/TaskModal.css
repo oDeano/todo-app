@@ -9,10 +9,18 @@
   display: grid;
 }
 
+.task-modal-info-container {
+  cursor: text;
+}
+
 /* TaskModalEdit */
 .task-modal-edit {
-  border: 1px black solid;
+  border: 1px var(--bs-gray-600) solid;
   border-radius: 5px;
+}
+
+#edit-description {
+  font-size: 13px;
 }
 
 #edit-title,
@@ -23,4 +31,17 @@
 #edit-title:focus,
 #edit-description:focus {
   box-shadow: none;
+}
+
+.task-modal-edit-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.task-modal-edit-buttons > button {
+  margin-top: 0.25rem;
+}
+
+.task-modal-edit-buttons > button:nth-of-type(2) {
+  margin-left: 0.25rem;
 }

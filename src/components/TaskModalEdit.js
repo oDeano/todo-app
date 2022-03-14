@@ -1,7 +1,14 @@
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 
-const TaskModalEdit = ({ taskInfo, toggleEdit }) => {
+const TaskModalEdit = ({
+  taskInfo,
+  title,
+  setTitle,
+  description,
+  setDescription,
+  handleCancel,
+}) => {
   return (
     <div>
       <div className="task-modal-edit">
@@ -10,21 +17,23 @@ const TaskModalEdit = ({ taskInfo, toggleEdit }) => {
             type="text"
             id="edit-title"
             placeholder="Task"
-            value={taskInfo.title}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
           <Form.Control
             type="text"
             id="edit-description"
             placeholder="Description"
-            value={taskInfo.description}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </Form>
       </div>
-      <div>
+      <div className="task-modal-edit-buttons">
         <Button variant="danger" size="sm">
           Save
         </Button>
-        <Button variant="outline-secondary" size="sm" onClick={toggleEdit}>
+        <Button variant="outline-secondary" size="sm" onClick={handleCancel}>
           Cancel
         </Button>
       </div>
