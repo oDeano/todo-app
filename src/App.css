@@ -19,7 +19,7 @@ li {
 
 .task-element {
   display: flex;
-  border-bottom: 1px var(--bs-gray-500) solid;
+  border-bottom: 1px var(--bs-gray-200) solid;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
 }
