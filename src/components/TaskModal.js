@@ -24,6 +24,7 @@ const TaskModal = ({ task, checkHandler, handleUpdateTask }) => {
   const handleSave = () => {
     handleUpdateTask(task.taskId, "title", title);
     handleUpdateTask(task.taskId, "description", description);
+    setEdit(false);
   };
 
   return (
