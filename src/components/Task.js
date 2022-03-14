@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Form,
   Modal,
@@ -20,12 +20,11 @@ const Task = ({ task, handleCheck }) => {
 
   // TaskModal state
   const [modalState, setModalState] = useState(false);
-  const handleOpen = () => setModalState(true);
-  const handleClose = () => setModalState(false);
+  const toggleModal = () => setModalState((prev) => !prev);
 
   return (
     <div>
-      <li className="task-element" onClick={handleOpen}>
+      <li className="task-element" onClick={toggleModal}>
         <div className="task-checkbox rounded">
           <Form.Check
             type="checkbox"
@@ -39,8 +38,8 @@ const Task = ({ task, handleCheck }) => {
           <div className="task-description">{task.description}</div>
         </div>
       </li>
-      <Modal show={modalState} onHide={handleClose}>
-        <TaskModal handleClose={handleClose} task={task} />
+      <Modal show={modalState} onHide={toggleModal}>
+        <TaskModal toggleModal={toggleModal} task={task} />
       </Modal>
     </div>
   );

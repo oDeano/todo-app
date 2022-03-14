@@ -1,19 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  Modal,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  Button,
-} from "react-bootstrap";
+import { ModalBody, ModalFooter, ModalHeader, Button } from "react-bootstrap";
 
-const TaskModal = ({ handleClose, task }) => {
+const TaskModal = ({ toggleModal, task }) => {
   return (
     <>
       <ModalHeader closeButton>Header</ModalHeader>
       <ModalBody>{task.title}</ModalBody>
       <ModalFooter>
-        <Button onClick={handleClose}>Close</Button>
+        <Button onClick={toggleModal}>Close</Button>
       </ModalFooter>
     </>
   );
