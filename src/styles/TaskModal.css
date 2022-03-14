@@ -1,0 +1,26 @@
+/* Task Modal */
+.task-modal-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.task-modal-right {
+  margin-left: 0.5rem;
+  display: grid;
+}
+
+/* TaskModalEdit */
+.task-modal-edit {
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+#edit-title,
+#edit-description {
+  border: none;
+}
+
+#edit-title:focus,
+#edit-description:focus {
+  box-shadow: none;
+}

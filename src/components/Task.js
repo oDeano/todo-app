@@ -39,7 +39,11 @@ const Task = ({ task, handleCheck }) => {
         </div>
       </li>
       <Modal show={modalState} onHide={toggleModal}>
-        <TaskModal toggleModal={toggleModal} task={task} />
+        <TaskModal
+          toggleModal={toggleModal}
+          task={task}
+          checkHandler={checkHandler}
+        />
       </Modal>
     </div>
   );
