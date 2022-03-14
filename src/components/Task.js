@@ -22,7 +22,11 @@ const Task = ({ task, handleCheck, handleUpdateTask }) => {
             onChange={checkHandler}
           />
         </div>
-        <div className="task-details" onClick={toggleModal}>
+        <div
+          className="task-details"
+          onClick={toggleModal}
+          data-complete={task.isComplete}
+        >
           <div className="task-title">{task.title}</div>
           <div className="task-description">{task.description}</div>
         </div>

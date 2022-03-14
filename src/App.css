@@ -41,6 +41,10 @@ li {
   cursor: pointer;
 }
 
+[data-complete="true"] {
+  text-decoration: line-through;
+}
+
 .task-title {
   font-size: 16px;
 }
