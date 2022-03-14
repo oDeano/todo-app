@@ -1,10 +1,4 @@
-import {
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  Button,
-  Form,
-} from "react-bootstrap";
+import { ModalBody, ModalFooter, ModalHeader, Form } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import "../styles/TaskModal.css";
 import TaskModalEdit from "./TaskModalEdit";
@@ -28,6 +22,7 @@ const TaskModal = ({ toggleModal, task, checkHandler }) => {
     setDescription(task.description);
     toggleEdit();
   };
+  const handleSave = () => {};
 
   return (
     <>
@@ -42,56 +37,26 @@ const TaskModal = ({ toggleModal, task, checkHandler }) => {
           />
         </div>
         <div className="task-modal-right">
-          <DisplayEdit
-            edit={edit}
-            taskInfo={taskInfo}
-            task={task}
-            toggleEdit={toggleEdit}
-            setTitle={setTitle}
-            setDescription={setDescription}
-            title={title}
-            description={description}
-            handleCancel={handleCancel}
-          />
+          {edit ? (
+            <TaskModalEdit
+              taskInfo={taskInfo}
+              setTitle={setTitle}
+              setDescription={setDescription}
+              title={title}
+              description={description}
+              handleCancel={handleCancel}
+            />
+          ) : (
+            <DisplayInfo task={task} toggleEdit={toggleEdit} />
+          )}
         </div>
       </ModalBody>
-      <ModalFooter>
-        {/* <Button onClick={toggleModal}>Close</Button> */}
-      </ModalFooter>
+      <ModalFooter></ModalFooter>
     </>
   );
 };
 
 export default TaskModal;
-
-const DisplayEdit = ({
-  edit,
-  taskInfo,
-  task,
-  setTitle,
-  setDescription,
-  title,
-  description,
-  handleCancel,
-  toggleEdit,
-}) => {
-  return (
-    <>
-      {edit ? (
-        <TaskModalEdit
-          taskInfo={taskInfo}
-          setTitle={setTitle}
-          setDescription={setDescription}
-          title={title}
-          description={description}
-          handleCancel={handleCancel}
-        />
-      ) : (
-        <DisplayInfo task={task} toggleEdit={toggleEdit} />
-      )}
-    </>
-  );
-};
 
 const DisplayInfo = ({ task, toggleEdit }) => {
   return (

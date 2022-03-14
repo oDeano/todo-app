@@ -1,21 +1,10 @@
 import { useState } from "react";
-import {
-  Form,
-  Modal,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  Button,
-} from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 import TaskModal from "./TaskModal";
 
 const Task = ({ task, handleCheck }) => {
   const checkHandler = () => {
     handleCheck(task.taskId);
-  };
-
-  const test = (e) => {
-    console.log(e);
   };
 
   // TaskModal state
@@ -24,7 +13,7 @@ const Task = ({ task, handleCheck }) => {
 
   return (
     <div>
-      <li className="task-element" onClick={toggleModal}>
+      <li className="task-element">
         <div className="task-checkbox rounded">
           <Form.Check
             type="checkbox"
@@ -33,7 +22,7 @@ const Task = ({ task, handleCheck }) => {
             onChange={checkHandler}
           />
         </div>
-        <div className="task-details">
+        <div className="task-details" onClick={toggleModal}>
           <div className="task-title">{task.title}</div>
           <div className="task-description">{task.description}</div>
         </div>
