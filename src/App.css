@@ -1,6 +1,6 @@
 /* Header */
 .header {
-  background-color: blue;
+  background-color: var(--bs-blue);
   height: 5vh;
 }
 
@@ -19,7 +19,7 @@ li {
 
 .task-element {
   display: flex;
-  border-bottom: 1px grey solid;
+  border-bottom: 1px var(--bs-gray-500) solid;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -33,6 +33,12 @@ li {
   border-radius: 1rem;
   width: 1.5em;
   height: 1.5em;
+  cursor: pointer;
+  border-color: var(--bs-gray-600);
+}
+
+.task-details {
+  cursor: pointer;
 }
 
 .task-title {
