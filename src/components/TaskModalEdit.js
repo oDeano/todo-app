@@ -8,6 +8,7 @@ const TaskModalEdit = ({
   description,
   setDescription,
   handleCancel,
+  handleSave,
 }) => {
   return (
     <div>
@@ -30,7 +31,7 @@ const TaskModalEdit = ({
         </Form>
       </div>
       <div className="task-modal-edit-buttons">
-        <Button variant="danger" size="sm">
+        <Button variant="danger" size="sm" onClick={handleSave}>
           Save
         </Button>
         <Button variant="outline-secondary" size="sm" onClick={handleCancel}>

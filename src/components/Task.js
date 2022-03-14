@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form, Modal } from "react-bootstrap";
 import TaskModal from "./TaskModal";
 
-const Task = ({ task, handleCheck }) => {
+const Task = ({ task, handleCheck, handleUpdateTask }) => {
   const checkHandler = () => {
     handleCheck(task.taskId);
   };
@@ -29,9 +29,9 @@ const Task = ({ task, handleCheck }) => {
       </li>
       <Modal show={modalState} onHide={toggleModal}>
         <TaskModal
-          toggleModal={toggleModal}
           task={task}
           checkHandler={checkHandler}
+          handleUpdateTask={handleUpdateTask}
         />
       </Modal>
     </div>

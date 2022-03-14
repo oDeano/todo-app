@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "../styles/TaskModal.css";
 import TaskModalEdit from "./TaskModalEdit";
 
-const TaskModal = ({ toggleModal, task, checkHandler }) => {
+const TaskModal = ({ task, checkHandler, handleUpdateTask }) => {
   const [taskInfo, setTaskInfo] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -15,14 +15,16 @@ const TaskModal = ({ toggleModal, task, checkHandler }) => {
     setDescription(task.description);
   }, []);
 
-  const updateTaskInfo = () => {};
   const toggleEdit = () => setEdit((prev) => !prev);
   const handleCancel = () => {
     setTitle(task.title);
     setDescription(task.description);
     toggleEdit();
   };
-  const handleSave = () => {};
+  const handleSave = () => {
+    handleUpdateTask(task.taskId, "title", title);
+    handleUpdateTask(task.taskId, "description", description);
+  };
 
   return (
     <>
@@ -45,6 +47,7 @@ const TaskModal = ({ toggleModal, task, checkHandler }) => {
               title={title}
               description={description}
               handleCancel={handleCancel}
+              handleSave={handleSave}
             />
           ) : (
             <DisplayInfo task={task} toggleEdit={toggleEdit} />

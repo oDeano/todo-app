@@ -27,6 +27,13 @@ function App() {
     setTasks([...tasks, task]);
   };
 
+  const handleUpdateTask = (id, property, newValue) => {
+    const newTasks = [...tasks];
+    const task = newTasks.find((task) => task.taskId === id);
+    task[property] = newValue;
+    setTasks(newTasks);
+  };
+
   const handleCheck = (id) => {
     const newTasks = [...tasks];
     const task = newTasks.find((task) => task.taskId === id);
@@ -47,7 +54,11 @@ function App() {
             <Display handleReceiveData={handleReceiveData} />
           </div>
           <div className="p-3">
-            <TaskList tasks={tasks} handleCheck={handleCheck} />
+            <TaskList
+              tasks={tasks}
+              handleCheck={handleCheck}
+              handleUpdateTask={handleUpdateTask}
+            />
           </div>
         </div>
       </div>
