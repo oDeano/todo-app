@@ -14,13 +14,13 @@ function App() {
 
   // Local storage
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
-  }, [tasks]);
-
-  useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storedTasks) setTasks(storedTasks);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
+  }, [tasks]);
 
   // Functions
   const handleReceiveData = (task) => {
