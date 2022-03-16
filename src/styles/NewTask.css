@@ -1,7 +1,7 @@
 .NewTask-date-container {
   display: flex;
   align-items: center;
-  gap: ;
+  gap: 1vw;
 }
 
 .NewTask-date-container > input {

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import TaskModal from "./TaskModal";
+import rDate from "../functions/rDate";
 
 const Task = ({ task, handleCheck, handleUpdateTask }) => {
   const checkHandler = () => {
@@ -11,6 +12,11 @@ const Task = ({ task, handleCheck, handleUpdateTask }) => {
   // TaskModal state
   const [modalState, setModalState] = useState(false);
   const toggleModal = () => setModalState((prev) => !prev);
+
+  // Date formatting
+  const dueDate = task.dueDate;
+  const dateSplit = dueDate.split("-");
+  let date = new Date(task.dueDate);
 
   return (
     <div>
@@ -41,6 +47,9 @@ const Task = ({ task, handleCheck, handleUpdateTask }) => {
               id="TaskList-date"
             />
           ) : null}
+        </div>
+        <div>
+          <p>{JSON.stringify(dateSplit)}</p>
         </div>
       </li>
       <Modal show={modalState} onHide={toggleModal}>
