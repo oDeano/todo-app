@@ -36,7 +36,11 @@ const TaskList = ({ tasks, handleCheck, handleUpdateTask }) => {
 
   return (
     <>
-      <Button variant={`outline-${buttonVar}`} onClick={handleBtnToggle}>
+      <Button
+        variant={`outline-${buttonVar}`}
+        onClick={handleBtnToggle}
+        id="toggle-button"
+      >
         {buttonText}
       </Button>
       <ul>
