@@ -25,10 +25,6 @@ const TaskList = ({ tasks, handleCheck, handleUpdateTask }) => {
     }
   }
 
-  function handleBtnToggle() {
-    toggleComplete();
-  }
-
   useEffect(() => {
     toggleButtonText();
     toggleButtonVar();
@@ -38,7 +34,7 @@ const TaskList = ({ tasks, handleCheck, handleUpdateTask }) => {
     <>
       <Button
         variant={`outline-${buttonVar}`}
-        onClick={handleBtnToggle}
+        onClick={toggleComplete}
         id="toggle-button"
       >
         {buttonText}
