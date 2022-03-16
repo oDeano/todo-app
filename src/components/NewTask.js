@@ -10,11 +10,13 @@ import {
 } from "react-bootstrap";
 import Task from "../functions/Task";
 import { useHotkeys } from "react-hotkeys-hook";
+import "../styles/NewTask.css";
 
 const NewTask = ({ handleReceiveData }) => {
   // Form data handling
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ const NewTask = ({ handleReceiveData }) => {
     task.taskId = uuidv4();
     task.title = title;
     task.description = description;
+    task.dueDate = date;
 
     return task;
   };
@@ -34,6 +37,7 @@ const NewTask = ({ handleReceiveData }) => {
   const resetForm = () => {
     setTitle("");
     setDescription("");
+    setDate("");
   };
 
   // Modal State
@@ -72,6 +76,14 @@ const NewTask = ({ handleReceiveData }) => {
                 className="mb-2"
                 wrap="soft"
               />
+              <div className="NewTask-date-container">
+                <Form.Label>Due date:</Form.Label>
+                <Form.Control
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                />
+              </div>
             </Form.Group>
           </ModalBody>
           <ModalFooter>

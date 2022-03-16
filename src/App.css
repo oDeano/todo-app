@@ -33,6 +33,13 @@ li {
   padding-bottom: 0.5rem;
 }
 
+#TaskList-date {
+  /* outline: 5px solid red; */
+  /* outline-offset: -5px; */
+  width: 7vw;
+  text-align: center;
+}
+
 .task-checkbox {
   padding: 0 0.5rem;
   justify-self: center;

@@ -4,6 +4,7 @@ class Task {
     this.title = undefined;
     this.description = undefined;
     this.isComplete = false;
+    this.dueDate = undefined;
   }
 }
 

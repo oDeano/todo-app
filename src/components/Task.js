@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Form, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import TaskModal from "./TaskModal";
 
 const Task = ({ task, handleCheck, handleUpdateTask }) => {
@@ -29,6 +30,17 @@ const Task = ({ task, handleCheck, handleUpdateTask }) => {
         >
           <div className="task-title">{task.title}</div>
           <div className="task-description">{task.description}</div>
+        </div>
+        <div>
+          {task.dueDate ? (
+            <Form.Control
+              type="date"
+              readOnly
+              plaintext
+              value={task.dueDate}
+              id="TaskList-date"
+            />
+          ) : null}
         </div>
       </li>
       <Modal show={modalState} onHide={toggleModal}>
